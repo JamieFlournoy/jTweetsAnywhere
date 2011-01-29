@@ -14,4 +14,4 @@ DEST_JS=${JS_LIB_NAME_PREFIX}-${JS_LIB_VERSION}.min.js
 YUI_COMPRESSOR_JAR=`ls tools/yuicompressor*.jar | head -1`
 
 echo "Minifying jTweetsAnywhere Using YUI Compressor at $YUI_COMPRESSOR_JAR"
-java -jar $YUI_COMPRESSOR_JAR lib/$SOURCE_Js > lib/$DEST_JS
+java -jar $YUI_COMPRESSOR_JAR lib/$SOURCE_JS > lib/$DEST_JS
