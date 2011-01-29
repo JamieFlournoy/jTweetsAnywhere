@@ -1,7 +1,8 @@
 #!/bin/sh
 
 if [ -z `ls tools/yuicompressor-*.jar` ]; then
-    echo "Download YUI Compressor and put the JAR in the tools/ directory."
+    echo "Download YUI Compressor from http://developer.yahoo.com/yui/compressor/ and put the JAR in the tools/ directory."
+    echo
     exit 1
 fi
 
