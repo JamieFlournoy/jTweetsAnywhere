@@ -9,13 +9,13 @@ DEST_JS=$JS_LIB_DIR/${JS_LIB_NAME_PREFIX}-${JS_LIB_VERSION}.min.js
 #COMPRESSOR_VARIANT="yui"
 COMPRESSOR_VARIANT="closure"
 
-if [[ "$COMPRESSOR_VARIANT" -eq "yui" ]]; then
+if [ "$COMPRESSOR_VARIANT" = "yui" ]; then
   COMPRESSOR_JAR=`ls tools/yuicompressor*.jar 2>/dev/null | head -1`
   COMPRESSOR_ARGS="-o $DEST_JS $SOURCE_JS"
   COMPRESSOR_NAME="YUI Compressor"
   COMPRESSOR_URL="http://developer.yahoo.com/yui/compressor/"
 else
-  if [[ "$COMPRESSOR_VARIANT" -eq "closure" ]]; then
+  if [ "$COMPRESSOR_VARIANT" = "closure" ]; then
     COMPRESSOR_JAR=`ls tools/compiler.jar 2>/dev/null | head -1`
     COMPRESSOR_ARGS="--js=$SOURCE_JS --js_output_file=$DEST_JS"
     COMPRESSOR_NAME="Closure Compiler"
@@ -28,7 +28,7 @@ if [ -z $COMPRESSOR_JAR ]; then
     exit 1
 fi
 
-echo "Minifying $SOURCE_JS using $COMPRESSOR_NAME at $YUI_COMPRESSOR_JAR"
+echo "Minifying $SOURCE_JS using $COMPRESSOR_NAME at $COMPRESSOR_JAR"
 
 java -jar $COMPRESSOR_JAR $COMPRESSOR_ARGS
 
@@ -36,6 +36,3 @@ ORIGINAL_BYTES=`du $SOURCE_JS | sed 's/lib.*//'`
 MINIFIED_BYTES=`du $DEST_JS | sed 's/lib.*//'`
 let "MINIFICATION_PERCENT = 100 * ($ORIGINAL_BYTES - $MINIFIED_BYTES) / $ORIGINAL_BYTES"
 echo "Minified ($MINIFICATION_PERCENT% smaller) as $DEST_JS"
-
-
-
