@@ -1,1 +1,1 @@
-Download the YUI Compressor from http://developer.yahoo.com/yui/compressor/ and put the yuicompressor.jar file in this directory.
+Download the Closure Compiler from http://closure-compiler.googlecode.com/files/compiler-latest.zip and put the compiler.jar file in this directory.
