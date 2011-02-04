@@ -116,6 +116,10 @@
 {
 }
 
+.jta-tweet-replyto
+{
+}
+
 .jta-tweet-source
 {
 }
@@ -133,6 +137,7 @@
 }
 
 .jta-tweet-timestamp-link,
+.jta-tweet-replyto-link,
 .jta-tweet-source-link a,
 .jta-tweet-inreplyto-link,
 .jta-tweet-location-link,
